@@ -128,5 +128,5 @@ public class OrdemServicoController {
         model.addAttribute("idcliente", c.getId());
         return cboEquipamentos;
 
-    }
+	}
 }
