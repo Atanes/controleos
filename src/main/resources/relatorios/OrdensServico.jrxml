@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.8.0.final using JasperReports Library version 6.8.0-2ed8dfabb690ff337a5797129f2cd92902b0c87b  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="Clientes" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1c56a9b1-6897-425d-b4a8-e4faede319ff">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<field name="id" class="java.lang.Long"/>
+	<field name="cliente.nome" class="java.lang.String"/>
+	<field name="data_emissao" class="java.sql.Date"/>
+	<field name="status" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="80" splitType="Stretch">
+			<textField>
+				<reportElement x="80" y="10" width="360" height="30" uuid="d4d7a566-dd44-41c4-a14f-505e55d4620a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial" size="18"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Relatório de Ordens de Serviço"]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="28" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="2" width="100" height="20" uuid="41231f1d-9617-4480-82f4-a2a0814e1e76">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="2a88b7d8-e766-41d0-9cbe-61cd5a093812"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Número]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="220" y="2" width="100" height="20" uuid="0b47d68d-c967-4bf4-bdae-63e848bc28fc">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="03c069e6-fc1f-4047-bed3-0c5a94846c57"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Cliente]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="2" width="100" height="20" uuid="a4e6efa9-1fc4-458f-92cc-5359c37927a0">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="51a7a8cc-d157-4df5-bd2e-56f26d7e9aa1"/>
+				</reportElement>
+				<textElement textAlignment="Left">
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Data abertura]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="340" y="2" width="100" height="20" uuid="4b9aa3ea-80b9-42c8-9f41-7e36189953ca">
+					<property name="com.jaspersoft.studio.spreadsheet.connectionID" value="03c069e6-fc1f-4047-bed3-0c5a94846c57"/>
+				</reportElement>
+				<textElement>
+					<font fontName="Arial" size="12" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Status]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="39" splitType="Stretch">
+			<textField>
+				<reportElement key="" x="0" y="0" width="100" height="21" uuid="cb4bb402-1596-4bfb-bc70-47afcf7310c8">
+					<property name="com.jaspersoft.studio.element.name" value="Número"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{id}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="" x="220" y="0" width="100" height="21" uuid="f5a1d937-262c-4cb3-a2e6-f92e1b3d54c8">
+					<property name="com.jaspersoft.studio.element.name" value="Número"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{cliente.nome}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="" x="110" y="0" width="100" height="21" uuid="b2153589-2d4f-4a89-8d16-6ecf022b72c6">
+					<property name="com.jaspersoft.studio.element.name" value="Número"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{data_emissao}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement key="" x="340" y="0" width="100" height="21" uuid="ac2f0cf3-cb09-4d98-99f9-dd44d1c553c4">
+					<property name="com.jaspersoft.studio.element.name" value="Número"/>
+				</reportElement>
+				<textFieldExpression><![CDATA[$F{status}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="79" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="8" width="50" height="38" uuid="dde0d410-a05b-4db4-a422-fe5dbe454bbd"/>
+				<imageExpression><![CDATA["src/main/resources/static/images/logo_iridiumIT.png"]]></imageExpression>
+			</image>
+			<image>
+				<reportElement x="54" y="14" width="110" height="30" uuid="9298cdf3-d0a9-44a6-95ed-6838cbc5bc75"/>
+				<imageExpression><![CDATA["src/main/resources/static/images/iridiumIT.png"]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

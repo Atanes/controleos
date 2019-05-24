@@ -92,7 +92,7 @@ public class EquipamentoController {
 		
 		disco.salvarFoto(imagem);
 		
-		equipamento.setUrl_imagen("/public/imagens_produtos/" + imagem.getOriginalFilename());
+		equipamento.setUrl_imagen("/imagens_produtos/" + imagem.getOriginalFilename());
 		
 		//Em uma aplicação publicada na WEB esse endereço deve ser trocado para um caminho no servidor de aplicações
 		//ou um servidor de arquivos

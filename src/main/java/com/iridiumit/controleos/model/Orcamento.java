@@ -1,5 +1,6 @@
 package com.iridiumit.controleos.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
@@ -29,7 +30,7 @@ public class Orcamento {
 	private String tempo;
 	
 	@OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "OS_id", nullable = false)
+    @JoinColumn(name = "os_id", nullable = false)
 	@JsonBackReference
     private OrdemServico os;
 

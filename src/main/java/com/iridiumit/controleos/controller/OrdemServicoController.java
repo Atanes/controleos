@@ -30,6 +30,7 @@ import com.iridiumit.controleos.model.StatusOS;
 import com.iridiumit.controleos.model.GruposTrabalho;
 import com.iridiumit.controleos.repository.Clientes;
 import com.iridiumit.controleos.repository.Equipamentos;
+import com.iridiumit.controleos.repository.Orcamentos;
 import com.iridiumit.controleos.repository.OrdensServico;
 import com.iridiumit.controleos.security.OSUserDetails;
 
@@ -39,6 +40,9 @@ public class OrdemServicoController {
 	
 	@Autowired
 	private OrdensServico ordensServico;
+	
+	@Autowired
+	private Orcamentos orcamentos;
 	
 	@Autowired
 	private Clientes clientes;
@@ -58,6 +62,7 @@ public class OrdemServicoController {
 	@DeleteMapping("/{id}")
 	public String remover(@PathVariable Long id, RedirectAttributes attributes) {
 		
+		orcamentos.deleteByOs_id(id);
 		ordensServico.delete(id);
 
 		attributes.addFlashAttribute("mensagem", "Ordem de Servico excluida com sucesso!!");

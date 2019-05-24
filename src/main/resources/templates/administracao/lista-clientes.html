@@ -62,7 +62,7 @@
 							<form method="POST"
 									th:onsubmit="'return confirm(\'Posso remover o cliente: ' + 
 								${cliente.nome} + ' da base de dados?\');'"
-									th:action="@{atendimento/clientes/excluir/{id}(id=${cliente.id})}">
+									th:action="@{/atendimento/clientes/excluir/{id}(id=${cliente.id})}">
 									<a class="btn btn-primary btn-xs" th:href="@{/atendimento/clientes/editar/{id}(id=${cliente.id})}"
 										th:title="Editar"> <span class="fa fa-pencil acoes"></span>
 									</a> <input type="hidden" name="_method" value="DELETE" />

@@ -54,7 +54,7 @@
 							<td class="col-md-1 text-center">
 								<form method="POST"
 									th:onsubmit="'return confirm(\'Posso remover a OS: ' + 
-								${ordemServico.id} + ' da base de dados?\');'"
+								${ordemServico.id} + ' e todos os orçamentos relacionados a ela da base de dados?\');'"
 									th:action="@{/atendimento/{id}(id=${ordemServico.id})}">
 									<a class="btn btn-primary btn-xs" th:href="@{/atendimento/{id}(id=${ordemServico.id})}"
 										th:title="Editar"> <span class="fa fa-pencil acoes"></span>

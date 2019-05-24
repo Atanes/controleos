@@ -49,14 +49,18 @@ public class OrcamentoController {
 
 		attributes.addFlashAttribute("mensagem", "Orçamento excluido com sucesso!!");
 		
-		return "redirect:/orcamento/lista-orcamento";
+		return "redirect:/orcamento";
 	}
 
-	/*@GetMapping("editar/{id}")
+	@GetMapping("/editar/{id}")
 	public ModelAndView editar(@PathVariable Long id) {
+		ModelAndView modelAndView = new ModelAndView("tecnico/cadastro-orcamento");
+		Orcamento orcamento = orcamentos.findOne(id);
+		
+		modelAndView.addObject(orcamento);
 
-		return novo(orcamentos.findOne(id), orcamentos.getOne(id).getOs().getId());
-	}*/
+		return modelAndView;
+	}
 
 	@GetMapping("/novo/{id}")
 	public ModelAndView novo(Orcamento orcamento, @PathVariable("id") Long id) {
@@ -82,7 +86,7 @@ public class OrcamentoController {
 
 		orcamentos.save(orcamento);
 
-		attributes.addFlashAttribute("mensagem", "Equipamento salvo com sucesso!!");
+		attributes.addFlashAttribute("mensagem", "Orçamento salvo com sucesso!!");
 		
 		return new ModelAndView("redirect:/orcamento");
 	}

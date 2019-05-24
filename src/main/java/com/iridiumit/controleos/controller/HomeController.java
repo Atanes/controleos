@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.iridiumit.controleos.relatorios.ClienteREL;
+import com.iridiumit.controleos.relatorios.OrdemServicoREL;
 import com.iridiumit.controleos.relatorios.UsuarioREL;
 import com.iridiumit.controleos.repository.Clientes;
 import com.iridiumit.controleos.repository.OrdensServico;
@@ -69,6 +70,21 @@ public class HomeController {
 			e.printStackTrace();
 		}
 		InputStream in = getClass().getResourceAsStream("/relatorios/Relatorio_de_Usuarios.pdf");
+		return IOUtils.toByteArray(in);
+	}
+	
+	@GetMapping(value = "/rel-ordensServico", produces = MediaType.APPLICATION_PDF_VALUE)
+	public @ResponseBody byte[] getRelOrdensServico() throws IOException {
+
+		OrdemServicoREL relatorio = new OrdemServicoREL();
+		
+		try {
+			relatorio.imprimir(ordensServico.findAll());
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		InputStream in = getClass().getResourceAsStream("/relatorios/Relatorio_de_OrdensServico.pdf");
 		return IOUtils.toByteArray(in);
 	}
 
