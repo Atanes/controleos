@@ -13,8 +13,12 @@ import com.iridiumit.controleos.security.OSUserDetailsService;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	
 	@Autowired
-	private OSUserDetailsService userDetailsService;
-	
+	final OSUserDetailsService userDetailsService;
+
+	public WebSecurityConfig(OSUserDetailsService userDetailsService) {
+		this.userDetailsService = userDetailsService;
+	}
+
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.
@@ -40,7 +44,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.rememberMe()
 				.userDetailsService(userDetailsService)
 			.and()
-			.exceptionHandling().accessDeniedPage("/acessonegado");;
+			.exceptionHandling().accessDeniedPage("/acessonegado");
 	}
 	
 	@Override
